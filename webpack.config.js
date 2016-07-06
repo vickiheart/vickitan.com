@@ -6,31 +6,31 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel",
         include: __dirname,
-        query: {
-          presets: [ 'es2015', 'react' ]
-        }
+        loaders: [
+          'babel?presets[]=es2015,presets[]=react',
+          'imports?define=>false',
+        ],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
           'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
+        ],
       },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ['style', 'css', 'sass'],
       },
     ],
   },
   entry: [
-    './index.js'
+    './index.js',
   ],
   output: {
     path: 'public',
-    filename: 'main.bundle.js'
+    filename: 'main.bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
