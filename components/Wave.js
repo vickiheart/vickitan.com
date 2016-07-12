@@ -158,7 +158,6 @@ function initScrollEffects() {
     triggerElement: 'header',
     offset: offset + 100,
   }).setTween(tween)
-    .addIndicators()
     .addTo(controller);
 }
 

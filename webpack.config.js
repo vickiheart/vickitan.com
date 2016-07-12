@@ -8,7 +8,7 @@ module.exports = {
         exclude: /node_modules/,
         include: __dirname,
         loaders: [
-          'babel?presets[]=es2015,presets[]=react',
+          'babel?presets[]=es2015,presets[]=react,presets[]=stage-2',
           'imports?define=>false',
         ],
       },
@@ -30,12 +30,13 @@ module.exports = {
   ],
   output: {
     path: 'public',
-    filename: 'main.bundle.js',
+    filename: '[hash].bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'App',
+      title: 'Vicki Tan',
       template: 'index.ejs',
+      favicon: './favicon.svg',
     }),
   ],
 };
