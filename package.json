@@ -35,11 +35,13 @@
   },
   "dependencies": {
     "aphrodite": "^0.4.0",
+    "font-awesome": "^4.6.3",
     "gsap": "^1.18.5",
     "lodash.throttle": "^4.0.1",
     "normalize.css": "^4.2.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-fontawesome": "^1.1.0",
     "react-fullpage": "^0.1.1",
     "scrollmagic": "^2.0.5",
     "three": "^0.78.0"

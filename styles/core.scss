@@ -1,5 +1,25 @@
 @import '~normalize.css';
+@import '~font-awesome/css/font-awesome.css';
+
+$text-dark: #333;
 
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  color: $text-dark;
+}
+
+a {
+  color: $text-dark;
+  text-decoration: none;
+
+  &:link,
+  &:hover,
+  &:active,
+  &:visited, {
+    color: $text-dark;
+  }
 }
