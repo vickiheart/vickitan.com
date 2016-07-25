@@ -6,14 +6,23 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
     position: 'relative',
+    alignItems: 'center',
     zIndex: 1,
+    '@media (max-width: 600px)': {
+      flexDirection: 'column',
+      minHeight: 100,
+    },
   },
 });
 
-const Header = ({children}) => (
+const Header = ({ children }) => (
   <header className={css(styles.header)} >
     {children}
   </header>
 );
+
+Header.propTypes = {
+  children: React.PropTypes.node,
+};
 
 export default Header;
