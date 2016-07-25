@@ -99,14 +99,6 @@ function onDocumentMouseMove(event) {
   mouseX = event.clientX - windowHalfX;
 }
 
-function onDocumentTouchStart(event) {
-  if (event.touches.length === 1) {
-    event.preventDefault();
-
-    mouseX = event.touches[0].pageX - windowHalfX;
-  }
-}
-
 function onDocumentTouchMove(event) {
   if (event.touches.length === 1) {
     event.preventDefault();
@@ -165,7 +157,6 @@ export default class Wave extends React.Component {
   componentDidMount() {
     init(this.stage);
     document.addEventListener('mousemove', onDocumentMouseMove, false);
-    document.addEventListener('touchstart', onDocumentTouchStart, false);
     document.addEventListener('touchmove', onDocumentTouchMove, false);
     window.addEventListener('resize', onWindowResize, false);
     animate();
@@ -174,7 +165,6 @@ export default class Wave extends React.Component {
 
   componentWillUnmount() {
     document.removeEventListener('mousemove', onDocumentMouseMove, false);
-    document.removeEventListener('touchstart', onDocumentTouchStart, false);
     document.removeEventListener('touchmove', onDocumentTouchMove, false);
     window.removeEventListener('resize', onWindowResize, false);
     stopAnimation();
