@@ -43,6 +43,7 @@
     "react-dom": "^15.1.0",
     "react-fontawesome": "^1.1.0",
     "react-fullpage": "^0.1.1",
+    "react-scroll": "^1.4.4",
     "scrollmagic": "^2.0.5",
     "three": "^0.78.0"
   }

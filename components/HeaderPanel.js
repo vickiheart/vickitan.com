@@ -13,8 +13,8 @@ const propTypes = {
   children: React.PropTypes.node,
 };
 
-const HeaderPanel = ({ children }) => (
-  <div className={css(styles.panel)} >
+const HeaderPanel = ({ id, children }) => (
+  <div id={id} className={css(styles.panel)} >
     {children}
   </div>
 );

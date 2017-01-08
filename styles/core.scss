@@ -4,12 +4,15 @@
 $text-dark: #333;
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html,
 body {
   color: $text-dark;
+  height: 100%;
 }
 
 a {
@@ -22,4 +25,52 @@ a {
   &:visited, {
     color: $text-dark;
   }
+}
+
+#container, #container > div {
+  height: 100%;
+}
+
+.Navigation {
+  position: fixed;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 32px;
+  opacity: 0;
+  z-index: 100;
+}
+.NavigationItem {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background: #333;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: all ease-in-out 0.17s;
+}
+
+.NavigationItemLinkActive {
+  width: 12px;
+  height: 12px;
+}
+
+.element {
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+.pd-left-120px {
+  padding-left: 120px;
+}
+
+.va-center {
+  display: flex;
+  align-items: center;
+}
+
+.h100p {
+  height: 100%;
 }
