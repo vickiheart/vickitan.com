@@ -8,6 +8,7 @@ import SocialLinks from './SocialLinks';
 import About from './About';
 import Navigation from './Navigation';
 import PortfolioItem from './PortfolioItem';
+import Iphone from './Iphone';
 
 import { StyleSheet, css } from 'aphrodite';
 // import Scroll, { Link, Element, Events, scroll, scrollSpy } from 'react-scroll';
@@ -115,6 +116,7 @@ class Portfolio extends Component {
             )
           })
         }
+        <Iphone />
       </div>
     );
   }

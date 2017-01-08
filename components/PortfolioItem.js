@@ -1,6 +1,5 @@
 require('../styles/core.scss');
 import React, { Component } from 'react';
-
 import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
     marginRight: '32px',
     flex: '1 auto',
     lineHeight: '1.4',
-    width: '25%',
+    width: '5%',
   },
   itemTitle: {
     marginBottom: '16px',
@@ -54,7 +53,7 @@ class PortfolioItem extends Component {
           ))}
         </div>
         <div className={css(styles.itemImage)}>
-          <img src={imgSrc} />
+
         </div>
         <div className={css(styles.flexSeparator)}>
         </div>
@@ -62,6 +61,8 @@ class PortfolioItem extends Component {
     )
   }
 }
+
+// <img src={imgSrc} />
 
 PortfolioItem.propTypes = {
   title: React.PropTypes.string,
