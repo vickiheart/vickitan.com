@@ -66,6 +66,7 @@ class Navigation extends Component {
   componentDidMount() {
     initScrollEffects(findDOMNode(this));
   }
+
   render() {
     return (
       <nav className="Navigation">
@@ -77,20 +78,22 @@ class Navigation extends Component {
               to="section-0"
               spy={true}
               smooth={true}
-              duration={500}>
+              duration={500}
+              onSetActive={this.props.handleSetActive}>
             </Link>
           </li>
           {
-            this.props.portfolioItems.map((item, idx) => {
+            this.props.portfolioItems.map((item) => {
               return (
-                <li key={idx} className={css(styles.navigationItem)}>
+                <li key={item.id} className={css(styles.navigationItem)}>
                   <Link
                     activeClass='NavigationItemLinkActive'
                     className="NavigationItem"
-                    to={'section-' + (idx + 1)}
+                    to={'section-' + (item.id)}
                     spy={true}
                     smooth={true}
-                    duration={500}>
+                    duration={500}
+                    onSetActive={this.props.handleSetActive}>
                   </Link>
                 </li>
               )

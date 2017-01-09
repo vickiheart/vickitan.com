@@ -28,42 +28,57 @@ var durationFn = function(deltaTop) {
 
 var portfolioItems = [
   {
+    id: 1,
     title: 'Lyft: Rating and Payment',
     summary: [
       'A new way to take care of feedback, payment and tipping with a couple quick taps. Optimized for the most common use case – the ride was just fine and you’re read to call your next  ride.',
       'The 3D map view and lightweight cards give context for where you were last dropped off, and signal that the ride has ended.',
     ],
     imgSrc: '../media/rating_payments.png',
+    videoSrcMov: '../media/videos/rating_payment.mov'
   },
   {
+    id: 2,
     title: 'Lyft: Ride Experience',
     summary: [
       'Redefined the ride experience for Lyft’s most recent passenger  app redesign.  Rooted in rigorous user testing, this update was targted to solve discoverability, accessibility  and usability concerns around passenger pickup and ride actions.',
       'The new ride panel prioritizes information for finding your ride, contextual to when you need it.',
     ],
     imgSrc: '../media/rideexperience.png',
+    videoSrcMov: '../media/videos/ride_experience.mp4'
   },
   {
+    id: 3,
     title: 'Lyft: Dynamic Pin',
     summary: [
       'Created a subtle, fine-tuned interaction for displaying updated ETAs in the location pin. At once, this animation must effectively communicate the most accurate information without calling too much attentiont to the changes in availability.',
     ],
     imgSrc: '../media/dynamicpin.png',
+    videoSrcMov: '../media/videos/dynamic_pin_drop.mov'
   },
   {
+    id: 4,
     title: 'Lyft: Ride Receipts',
     summary: [
       'Redefined the ride experience for Lyft’s most recent passenger  app redesign.  Rooted in rigorous user testing, this update was targted to solve discoverability, accessibility  and usability concerns around passenger pickup and ride actions.',
       'The new ride panel prioritizes information for finding your ride, contextual to when you need it.',
     ],
     imgSrc: '../media/ride_receipts.png',
+    videoSrcMov: '../media/videos/ride_receipts.mov'
   },
 ]
 
 
 class Portfolio extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItemId: 1,
+      activeVideoSrcMov: '../media/videos/rating_payment.mov',
+    }
+  }
 
+  componentDidMount() {
     Events.scrollEvent.register('begin', function() {
       console.log("begin", arguments);
     });
@@ -73,11 +88,22 @@ class Portfolio extends Component {
     });
 
     scrollSpy.update();
-
   }
 
   scrollToTop() {
     scroll.scrollToTop();
+  }
+
+  handleSetActive(to) {
+    const sectionId = parseInt(to.split('-')[1]);
+    const activeItem = portfolioItems.find((item) => item.id === sectionId);
+    console.log(activeItem);
+    if (activeItem !== undefined) {
+      this.setState ({
+        activeItemId: activeItem.id,
+        activeVideoSrcMov: activeItem.videoSrcMov
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -88,7 +114,10 @@ class Portfolio extends Component {
   render() {
     return (
       <div className="h100p">
-        <Navigation portfolioItems={portfolioItems} />
+        <Navigation
+          portfolioItems={portfolioItems}
+          handleSetActive={this.handleSetActive.bind(this)}
+        />
 
         <Element className="element">
           <Header>
@@ -103,11 +132,15 @@ class Portfolio extends Component {
           <About />
         </Element>
         {
-          portfolioItems.map((item, idx) => {
+          portfolioItems.map((item) => {
             return (
-              <Element name={'section-' + (idx + 1)} key={idx} className="element pd-left-120px va-center">
+              <Element
+                key={item.id}
+                name={'section-' + (item.id)}
+                className="element pd-left-120px va-center"
+              >
                 <PortfolioItem
-                  key={idx}
+                  key={item.id}
                   title={item.title}
                   summary={item.summary}
                   imgSrc={item.imgSrc}
@@ -116,7 +149,7 @@ class Portfolio extends Component {
             )
           })
         }
-        <Iphone />
+        <Iphone videoSrcMov={this.state.activeVideoSrcMov} />
       </div>
     );
   }
