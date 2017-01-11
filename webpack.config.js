@@ -20,6 +20,12 @@ module.exports = {
         ],
       },
       {
+        test: /\.(mov|mp4)(\?\S*)?$/i,
+        loaders: [
+          'file?hash=sha512&digest=hex&name=[hash].[ext]',
+        ],
+      },
+      {
         test: /\.(woff|woff2|eot|ttf)(\?\S*)?$/,
         loader: 'url-loader?limit=100000',
       },
@@ -33,7 +39,7 @@ module.exports = {
     './index.js',
   ],
   output: {
-    path: 'public',
+    path: 'build',
     filename: '[hash].bundle.js',
   },
   plugins: [

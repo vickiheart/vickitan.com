@@ -45,7 +45,7 @@ var portfolioItems = [
       'The new ride panel prioritizes information for finding your ride, contextual to when you need it.',
     ],
     imgSrc: '../media/rideexperience.png',
-    videoSrcMov: '../media/videos/ride_experience.mp4'
+    videoSrcMov: '../media/videos/ride_experience.mov'
   },
   {
     id: 3,
@@ -76,6 +76,7 @@ class Portfolio extends Component {
       activeItemId: 1,
       activeVideoSrcMov: '../media/videos/rating_payment.mov',
     }
+    this.iphoneNode = null;
   }
 
   componentDidMount() {
@@ -97,12 +98,12 @@ class Portfolio extends Component {
   handleSetActive(to) {
     const sectionId = parseInt(to.split('-')[1]);
     const activeItem = portfolioItems.find((item) => item.id === sectionId);
-    console.log(activeItem);
     if (activeItem !== undefined) {
       this.setState ({
         activeItemId: activeItem.id,
         activeVideoSrcMov: activeItem.videoSrcMov
       });
+      // this.iphoneNode.videoNode.play();
     }
   }
 
@@ -136,6 +137,7 @@ class Portfolio extends Component {
             return (
               <Element
                 key={item.id}
+                id={'section-' + (item.id)}
                 name={'section-' + (item.id)}
                 className="element pd-left-120px va-center"
               >
@@ -144,12 +146,16 @@ class Portfolio extends Component {
                   title={item.title}
                   summary={item.summary}
                   imgSrc={item.imgSrc}
+                  parentElementId={'#section-' + (item.id)}
                 />
               </Element>
             )
           })
         }
-        <Iphone videoSrcMov={this.state.activeVideoSrcMov} />
+        <Iphone
+          ref={(node) => this.iphoneNode = node}
+          videoSrcMov={this.state.activeVideoSrcMov}
+        />
       </div>
     );
   }

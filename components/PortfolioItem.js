@@ -1,6 +1,9 @@
 require('../styles/core.scss');
 import React, { Component } from 'react';
-import { StyleSheet, css } from 'aphrodite';
+import { findDOMNode } from 'react-dom';
+import { StyleSheet, css } from 'aphrodite/no-important';
+import TweenMax from 'gsap';
+import ScrollMagic from 'scrollmagic';
 
 const styles = StyleSheet.create({
   item: {
@@ -12,16 +15,13 @@ const styles = StyleSheet.create({
   itemImage: {
     flex: '1 auto',
     textAlign: 'center',
-    // fontFamily: '-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
-    // display: 'flex',
-    // alignItems: 'center',
   },
   itemDetails: {
-    // maxWidth: '320px',
     marginRight: '32px',
     flex: '1 auto',
     lineHeight: '1.4',
     width: '5%',
+    opacity: 0,
   },
   itemTitle: {
     marginBottom: '16px',
@@ -41,12 +41,27 @@ const styles = StyleSheet.create({
   },
 });
 
+function initScrollEffects(parentElementId) {
+  const offset = window.innerHeight/4;
+  const tween = TweenMax.to(parentElementId + ' #details', 1, { css: { opacity: 1 } });
+  const controller = new ScrollMagic.Controller();
+  const scrollScene = new ScrollMagic.Scene({
+    triggerElement: parentElementId,
+    offset: offset,
+  }).setTween(tween)
+    .addTo(controller);
+}
+
 class PortfolioItem extends Component {
+  componentDidMount() {
+    initScrollEffects(this.props.parentElementId);
+  }
+
   render() {
     var { title, summary, imgSrc } = this.props;
     return (
       <div className={css(styles.item)}>
-        <div className={css(styles.itemDetails)}>
+        <div id='details' className={css(styles.itemDetails)}>
           <h3 className={css(styles.itemTitle)}>{title}</h3>
           {summary.map((summaryParagraph, idx) => (
               <div key={idx} className={css(styles.summaryParagraph)}>{summaryParagraph}</div>

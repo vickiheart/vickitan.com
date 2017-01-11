@@ -57,7 +57,7 @@ function initScrollEffects() {
   const controller = new ScrollMagic.Controller();
   const scrollScene = new ScrollMagic.Scene({
     triggerElement: 'header',
-    offset: offset + 300,
+    offset: offset + 100,
   }).setTween(tween)
     .addTo(controller);
 }

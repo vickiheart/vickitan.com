@@ -55,11 +55,13 @@ a {
 .NavigationItemLinkActive {
   width: 12px;
   height: 12px;
+  transform: translateY(-4px),
 }
 
 .element {
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   height: 100%;
+  // height: 120%;
 }
 
 .pd-left-120px {

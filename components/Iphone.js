@@ -45,6 +45,11 @@ function initScrollEffects() {
 }
 
 class Iphone extends Component {
+  constructor(props) {
+    super(props);
+    this.videoNode = null;
+  }
+
   componentDidMount() {
     initScrollEffects(findDOMNode(this));
   }
@@ -57,6 +62,7 @@ class Iphone extends Component {
         </div>
         <div className={css(styles.iphoneFixed)}>
           <video
+            ref={(node) => this.videoNode = node}
             className={css(styles.iphoneScreenVideo)}
             src={this.props.videoSrcMov}
             autoPlay
