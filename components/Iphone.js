@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite/no-important';
 
 import TweenMax from 'gsap';
 import ScrollMagic from 'scrollmagic';
@@ -25,11 +25,22 @@ const styles = StyleSheet.create({
     // boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)',
   },
   iphoneScreenVideo: {
+    position: 'absolute',
+    top: '0',
+    left: '0',
     maxWidth: '300px',
     width: 'auto',
     height: 'auto',
-    border: '3px solid #000',
+    border: '2px solid #000',
     marginBottom: '120px',
+    transition: 'all 0.36s ease-in',
+    transform: 'translateY(24px)',
+    opacity: 0,
+  },
+  videoContainerRelative: {
+    position: 'relative',
+    width: '300px',
+    height: '652px',
   }
 });
 
@@ -46,29 +57,59 @@ function initScrollEffects() {
 
 class Iphone extends Component {
   constructor(props) {
-    super(props);
-    this.videoNode = null;
+    super(props)
+    this.state = {
+      activeVideoId: 0
+    }
   }
 
   componentDidMount() {
     initScrollEffects(findDOMNode(this));
   }
 
+  componentDidUpdate() {
+    this.props.portfolioItems.forEach((item) => {
+      console.log(this[`video${item.id}`]);
+      if (this.state.activeVideoId === item.id) {
+        this[`video${item.id}`].classList.add('iphoneScreenVideoActive');
+        this[`video${item.id}`].play();
+      } else {
+        this[`video${item.id}`].classList.remove('iphoneScreenVideoActive');
+        this[`video${item.id}`].pause();
+      }
+    })
+  }
+
+  handleChangeVideo = (vId) => {
+    this.setState({
+      activeVideoId: vId,
+    })
+  }
+
   render() {
+    const { portfolioItems } = this.props;
     return (
       <div className='iphoneContainer'>
         <div className={css(styles.iphoneFixed)}>
           <img className={css(styles.iphoneImage)} src={iphoneSvg} />
         </div>
         <div className={css(styles.iphoneFixed)}>
-          <video
-            ref={(node) => this.videoNode = node}
-            className={css(styles.iphoneScreenVideo)}
-            src={this.props.videoSrcMov}
-            autoPlay
-            loop
-          >
-          </video>
+          <div className={css(styles.videoContainerRelative)}>
+            {
+              portfolioItems.map((item) => {
+                return (
+                  <video
+                    key={item.id}
+                    ref={(node) => this[`video${item.id}`] = node}
+                    className={css(styles.iphoneScreenVideo)}
+                    src={item.videoSrcMov}
+                    loop
+                  >
+                  </video>
+                )
+              })
+            }
+          </div>
         </div>
       </div>
     );

@@ -64,7 +64,7 @@ class PortfolioItem extends Component {
         <div id='details' className={css(styles.itemDetails)}>
           <h3 className={css(styles.itemTitle)}>{title}</h3>
           {summary.map((summaryParagraph, idx) => (
-              <div key={idx} className={css(styles.summaryParagraph)}>{summaryParagraph}</div>
+              <p key={idx} className={css(styles.summaryParagraph)}>{summaryParagraph}</p>
           ))}
         </div>
         <div className={css(styles.itemImage)}>

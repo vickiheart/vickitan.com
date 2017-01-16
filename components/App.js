@@ -73,8 +73,8 @@ class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItemId: 1,
-      activeVideoSrcMov: '../media/videos/rating_payment.mov',
+      activeItemId: 0,
+      activeVideoSrcMov: '',
     }
     this.iphoneNode = null;
   }
@@ -97,14 +97,21 @@ class Portfolio extends Component {
 
   handleSetActive(to) {
     const sectionId = parseInt(to.split('-')[1]);
-    const activeItem = portfolioItems.find((item) => item.id === sectionId);
-    if (activeItem !== undefined) {
+    if (sectionId === 0) {
       this.setState ({
-        activeItemId: activeItem.id,
-        activeVideoSrcMov: activeItem.videoSrcMov
+        activeItemId: 0,
+        activeVideoSrcMov: ''
       });
-      // this.iphoneNode.videoNode.play();
+    } else {
+      const activeItem = portfolioItems.find((item) => item.id === sectionId);
+      if (activeItem !== undefined) {
+        this.setState ({
+          activeItemId: activeItem.id,
+          activeVideoSrcMov: activeItem.videoSrcMov
+        });
+      }
     }
+    this.iphoneNode.handleChangeVideo(sectionId);
   }
 
   componentWillUnmount() {
@@ -153,8 +160,8 @@ class Portfolio extends Component {
           })
         }
         <Iphone
+          portfolioItems={portfolioItems}
           ref={(node) => this.iphoneNode = node}
-          videoSrcMov={this.state.activeVideoSrcMov}
         />
       </div>
     );

@@ -58,6 +58,11 @@ a {
   transform: translateY(-4px),
 }
 
+.iphoneScreenVideoActive {
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
+}
+
 .element {
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   height: 100%;
