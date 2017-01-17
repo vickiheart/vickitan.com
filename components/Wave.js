@@ -157,7 +157,6 @@ export default class Wave extends React.Component {
   componentDidMount() {
     init(this.stage);
     document.addEventListener('mousemove', onDocumentMouseMove, false);
-    document.addEventListener('touchmove', onDocumentTouchMove, false);
     window.addEventListener('resize', onWindowResize, false);
     animate();
     initScrollEffects(findDOMNode(this));
@@ -165,7 +164,6 @@ export default class Wave extends React.Component {
 
   componentWillUnmount() {
     document.removeEventListener('mousemove', onDocumentMouseMove, false);
-    document.removeEventListener('touchmove', onDocumentTouchMove, false);
     window.removeEventListener('resize', onWindowResize, false);
     stopAnimation();
   }
@@ -180,4 +178,3 @@ export default class Wave extends React.Component {
     );
   }
 }
-
