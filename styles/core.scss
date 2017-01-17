@@ -73,6 +73,15 @@ a {
   transform: translateY(0px) !important;
 }
 
+.pd-left-120px {
+  padding-left: 120px;
+}
+@media screen and (max-width: 600px) {
+  .pd-left-120px {
+    padding-left: 0;
+  }
+}
+
 .element {
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   height: 100%;
@@ -82,15 +91,6 @@ a {
     padding: 24px;
     min-height: 100%;
     height: auto;
-  }
-}
-
-.pd-left-120px {
-  padding-left: 120px;
-}
-@media screen and (max-width: 600px) {
-  .pd-left-120px {
-    padding-left: 0;
   }
 }
 
