@@ -8,11 +8,11 @@ import ScrollMagic from 'scrollmagic';
 import iphoneSvg from '../media/iphoneSvg.svg';
 
 const styles = StyleSheet.create({
-  iphoneContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    opacity: 0,
-  },
+  // iphoneContainer: {
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   opacity: 0,
+  // },
   iphoneFixed: {
     position: 'fixed',
     bottom: '-96px',

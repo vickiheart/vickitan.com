@@ -2,7 +2,7 @@ require('../styles/core.scss');
 
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite/no-important';
 import TweenMax from 'gsap';
 import ScrollMagic from 'scrollmagic';
 
@@ -30,9 +30,18 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    '@media screen and (max-width: 600px)': {
+      flexDirection: 'row',
+      width: '100%',
+      justifyContent: 'center',
+    },
   },
   navigationItem: {
     height: '36px',
+    '@media screen and (max-width: 600px)': {
+      marginRight: '12px',
+      marginLeft: '12px',
+    },
   },
   navigationItemLink: {
     display: 'block',
@@ -44,6 +53,7 @@ const styles = StyleSheet.create({
     height: '6px',
     borderRadius: '50%',
     transition: 'all ease-in 0.14s',
+
   },
   navigationItemLinkActive: {
     width: '12px',

@@ -11,17 +11,25 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    opacity: 0,
+    '@media screen and (max-width: 600px)': {
+      flexWrap: 'wrap',
+    },
   },
   itemImage: {
     flex: '1 auto',
-    textAlign: 'center',
+    '@media screen and (max-width: 600px)': {
+      width: '100%',
+    },
   },
   itemDetails: {
     marginRight: '32px',
     flex: '1 auto',
     lineHeight: '1.4',
     width: '5%',
-    opacity: 0,
+    '@media screen and (max-width: 600px)': {
+      width: '100%',
+    },
   },
   itemTitle: {
     marginBottom: '16px',
@@ -35,6 +43,17 @@ const styles = StyleSheet.create({
     marginBottom: '16px',
     color: '#999',
   },
+  iphoneScreenVideo: {
+    maxWidth: '100%',
+    width: 'auto',
+    height: 'auto',
+    border: '2px solid #000',
+    display: 'none',
+    '@media screen and (max-width: 600px)': {
+      width: '100%',
+      display: 'block',
+    },
+  },
   flexSeparator: {
     flex: '1 auto',
     width: '25%',
@@ -43,7 +62,7 @@ const styles = StyleSheet.create({
 
 function initScrollEffects(parentElementId) {
   const offset = window.innerHeight/4;
-  const tween = TweenMax.to(parentElementId + ' #details', 1, { css: { opacity: 1 } });
+  const tween = TweenMax.to(parentElementId + ' #item', 1, { css: { opacity: 1 } });
   const controller = new ScrollMagic.Controller();
   const scrollScene = new ScrollMagic.Scene({
     triggerElement: parentElementId,
@@ -58,9 +77,9 @@ class PortfolioItem extends Component {
   }
 
   render() {
-    var { title, summary, imgSrc } = this.props;
+    var { title, summary, imgSrc, videoSrcMov } = this.props;
     return (
-      <div className={css(styles.item)}>
+      <div id='item' className={css(styles.item)}>
         <div id='details' className={css(styles.itemDetails)}>
           <h3 className={css(styles.itemTitle)}>{title}</h3>
           {summary.map((summaryParagraph, idx) => (
@@ -68,7 +87,12 @@ class PortfolioItem extends Component {
           ))}
         </div>
         <div className={css(styles.itemImage)}>
-
+          <video
+            className={css(styles.iphoneScreenVideo)}
+            src={videoSrcMov}
+            loop
+          >
+          </video>
         </div>
         <div className={css(styles.flexSeparator)}>
         </div>

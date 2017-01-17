@@ -153,6 +153,7 @@ class Portfolio extends Component {
                   title={item.title}
                   summary={item.summary}
                   imgSrc={item.imgSrc}
+                  videoSrcMov={item.videoSrcMov}
                   parentElementId={'#section-' + (item.id)}
                 />
               </Element>

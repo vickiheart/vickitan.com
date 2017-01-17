@@ -40,6 +40,16 @@ a {
   opacity: 0;
   z-index: 100;
 }
+@media screen and (max-width: 600px) {
+  .Navigation {
+    height: 72px;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+
+
 .NavigationItem {
   display: block;
   margin-top: 12px;
@@ -66,12 +76,24 @@ a {
 .element {
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   height: 100%;
-  // height: 120%;
+}
+@media screen and (max-width: 600px) {
+  .element {
+    padding: 24px;
+    min-height: 100%;
+    height: auto;
+  }
 }
 
 .pd-left-120px {
   padding-left: 120px;
 }
+@media screen and (max-width: 600px) {
+  .pd-left-120px {
+    padding-left: 0;
+  }
+}
+
 
 .va-center {
   display: flex;
@@ -86,4 +108,9 @@ a {
   display: flex;
   justify-content: center;
   opacity: 0;
+}
+@media screen and (max-width: 600px) {
+  .iphoneContainer {
+    display: none;
+  }
 }
