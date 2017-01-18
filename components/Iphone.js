@@ -5,7 +5,7 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import TweenMax from 'gsap';
 import ScrollMagic from 'scrollmagic';
 
-import iphoneSvg from '../media/iphoneSvg.svg';
+import iphoneSvg from './media/iphoneSvg.svg';
 
 const styles = StyleSheet.create({
   iphoneContainer: {
@@ -125,6 +125,6 @@ class Iphone extends Component {
   }
 }
 
-// '../media/videos/rating_payment.mov'
+// './media/videos/rating_payment.mov'
 
 export default Iphone;

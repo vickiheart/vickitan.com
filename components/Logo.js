@@ -1,5 +1,5 @@
 import React from 'react';
-import logoSvg from '../media/logo.svg';
+import logoSvg from './media/logo.svg';
 
 console.log(logoSvg);
 

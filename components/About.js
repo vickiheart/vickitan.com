@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   aboutAvatar: {
-    backgroundImage: 'url("../media/vickitan.png")',
+    backgroundImage: 'url("./media/vickitan.png")',
     backgroundSize: 'cover',
     borderRadius: '50%',
     width: '120px',
