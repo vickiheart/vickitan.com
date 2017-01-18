@@ -71,6 +71,10 @@ function initScrollEffects(parentElementId) {
     .addTo(controller);
 }
 
+function createMarkup(html) {
+  return { __html: html }
+}
+
 class PortfolioItem extends Component {
   componentDidMount() {
     initScrollEffects(this.props.parentElementId);
@@ -83,7 +87,7 @@ class PortfolioItem extends Component {
         <div id='details' className={css(styles.itemDetails)}>
           <h3 className={css(styles.itemTitle)}>{title}</h3>
           {summary.map((summaryParagraph, idx) => (
-              <p key={idx} className={css(styles.summaryParagraph)}>{summaryParagraph}</p>
+              <p key={idx} className={css(styles.summaryParagraph)} dangerouslySetInnerHTML={createMarkup(summaryParagraph)}>{}</p>
           ))}
         </div>
         <div className={css(styles.itemImage)}>

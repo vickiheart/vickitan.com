@@ -31,8 +31,8 @@ var portfolioItems = [
     id: 1,
     title: 'Lyft: Rating and Payment',
     summary: [
-      'A new way to take care of feedback, payment and tipping with a couple quick taps. Optimized for the most common use case – the ride was just fine and you’re read to call your next  ride.',
-      'The 3D map view and lightweight cards give context for where you were last dropped off, and signal that the ride has ended.',
+      'The end of your Lyft ride just got a smooth little update to help you complete payment and rate your driver with a few quick taps. I optimized this experience for the most common use case – you had a fine ride and you’re already calling the next one.',
+      'The 3D maps drop off view is a completely new one, and was used specifically to give context about the location of your last ride, and to signal that the ride has ended.',
     ],
     imgSrc: '../media/rating_payments.png',
     videoSrcMov: '../media/videos/rating_payment.mov'
@@ -41,8 +41,8 @@ var portfolioItems = [
     id: 2,
     title: 'Lyft: Ride Experience',
     summary: [
-      'Redefined the ride experience for Lyft’s most recent passenger  app redesign.  Rooted in rigorous user testing, this update was targted to solve discoverability, accessibility  and usability concerns around passenger pickup and ride actions.',
-      'The new ride panel prioritizes information for finding your ride, contextual to when you need it.',
+      'We did a complete refresh of Lyft’s  ride experience.  Rooted in rigorous user testing, this update was targted to solve myriad discoverability, accessibility  and usability concerns. I owned the latter half of the experience, including everything after you hit “Request”.',
+      'Highlights:<br/>– Contextual ride panel that surfaces the information about your ride when you most need it.<br/>– Ride actions are ergonomically placed within thumbs reach for easy access.',
     ],
     imgSrc: '../media/rideexperience.png',
     videoSrcMov: '../media/videos/ride_experience.mov'
@@ -60,8 +60,7 @@ var portfolioItems = [
     id: 4,
     title: 'Lyft: Ride Receipts',
     summary: [
-      'Redefined the ride experience for Lyft’s most recent passenger  app redesign.  Rooted in rigorous user testing, this update was targted to solve discoverability, accessibility  and usability concerns around passenger pickup and ride actions.',
-      'The new ride panel prioritizes information for finding your ride, contextual to when you need it.',
+      'I created a modular email for Lyft email receipts, to help riders quickly identify the ride, understand pricing, and take action if needed. Components include: ride summary, itemized breakdown of price, and promotional cards. ',
     ],
     imgSrc: '../media/ride_receipts.png',
     videoSrcMov: '../media/videos/ride_receipts.mov'
