@@ -36,7 +36,7 @@ var portfolioItems = [
     ],
     imgSrc: './media/rating_payments.png',
     videoSrcWebm: './media/videos/rating_payment.webm',
-    videoSrcMov: './media/videos/rating_payment.mp4'
+    videoSrcMp4: './media/videos/rating_payment.mp4'
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ var portfolioItems = [
     ],
     imgSrc: './media/rideexperience.png',
     videoSrcWebm: './media/videos/ride_experience.webm',
-    videoSrcMov: './media/videos/ride_experience.mp4'
+    videoSrcMp4: './media/videos/ride_experience.mp4'
   },
   {
     id: 3,
@@ -57,7 +57,7 @@ var portfolioItems = [
     ],
     imgSrc: './media/dynamicpin.png',
     videoSrcWebm: './media/videos/dynamic_pin_drop.webm',
-    videoSrcMov: './media/videos/dynamic_pin_drop.mp4'
+    videoSrcMp4: './media/videos/dynamic_pin_drop.mp4'
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ var portfolioItems = [
     ],
     imgSrc: './media/ride_receipts.png',
     videoSrcWebm: './media/videos/ride_receipts.webm',
-    videoSrcMov: './media/videos/ride_receipts.mov'
+    videoSrcMp4: './media/videos/ride_receipts.mov'
   },
 ]
 
@@ -77,7 +77,6 @@ class Portfolio extends Component {
     super(props);
     this.state = {
       activeItemId: 0,
-      activeVideoSrcMov: '',
     }
     this.iphoneNode = null;
   }
@@ -103,14 +102,12 @@ class Portfolio extends Component {
     if (sectionId === 0) {
       this.setState ({
         activeItemId: 0,
-        activeVideoSrcMov: ''
       });
     } else {
       const activeItem = portfolioItems.find((item) => item.id === sectionId);
       if (activeItem !== undefined) {
         this.setState ({
           activeItemId: activeItem.id,
-          activeVideoSrcMov: activeItem.videoSrcMov
         });
       }
     }
@@ -157,7 +154,7 @@ class Portfolio extends Component {
                   summary={item.summary}
                   imgSrc={item.imgSrc}
                   videoSrcWebm={item.videoSrcWebm}
-                  videoSrcMov={item.videoSrcMov}
+                  videoSrcMp4={item.videoSrcMp4}
                   parentElementId={'#section-' + (item.id)}
                 />
               </Element>

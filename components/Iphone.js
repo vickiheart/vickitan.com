@@ -112,7 +112,7 @@ class Iphone extends Component {
                     loop
                   >
                     <source src={item.videoSrcWebm} type='video/webm'/>
-                    <source src={item.videoSrcMov} type='video/mp4'/>
+                    <source src={item.videoSrcMp4} type='video/mp4'/>
                     Your browser does not support the video tag.
                   </video>
                 )
