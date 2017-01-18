@@ -32,7 +32,7 @@ var portfolioItems = [
     title: 'Lyft: Rating and Payment',
     summary: [
       'I redesigned Lyft’s rating and payment flow to help you finish your ride with just a few quick taps. I optimized this experience for the most common use case – you had a great Lyft ride and you’re already calling the next one.',
-      'After the ride has ended, the map tilts to signal the a state change, so you can be certain you’re no longer being charged. The pink pin indicates your drop-off location, serving as a subtle reminder and context for rating and giving feedback to your driver.',
+      'After the ride has ended, the map tilts to signal the state change, so you can be certain you’re no longer being charged. The pink pin indicates your drop-off location, serving as a subtle reminder and context for rating and giving feedback to your driver.',
     ],
     imgSrc: './media/rating_payments.png',
     videoSrcMov: './media/videos/rating_payment.mov'

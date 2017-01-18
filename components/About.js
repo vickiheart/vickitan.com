@@ -23,17 +23,17 @@ const styles = StyleSheet.create({
     backgroundImage: 'url("./media/vickitan.png")',
     backgroundSize: 'cover',
     borderRadius: '50%',
-    width: '120px',
-    height: '120px',
-    marginRight: '32px',
-    flex: '120px 0 0',
+    width: '200px',
+    height: '200px',
+    marginRight: '48px',
+    flex: '200px 0 0',
   },
   aboutHeader: {
     marginBottom: '16px',
     fontSize: '20px',
   },
   aboutContent: {
-    maxWidth: '496px',
+    maxWidth: '640px',
     color: '#999',
     lineHeight: '1.4',
   },
@@ -63,8 +63,10 @@ class About extends Component {
           </div>
           <div>
             <div className={css(styles.aboutHeader)}>Hi friends!</div>
-            <div className={css(styles.aboutContent)}>I’m Vicki, a product designer living in San Franciso.<br/>
-      Right now, I’m big into reading sci-fi, learning to do yoga inversions,  and riding motorcycles at the slowest speed posible.
+            <div className={css(styles.aboutContent)}>
+              <p>I’m Vicki, a product designer living in San Francisco. I love reading sci-fi, practicing yoga, and going on motorcycle adventures.</p>
+              <br/>
+              <p>My background is in behavioral psychology at UCSD and I worked in academic research at UCSF and Stanford before making the transition into tech. Following that, I was at Google working on hiring experiments and found my passion for design while building an interview assessment tool. And for the last several years, I’ve been at Lyft on the product design team, helping to shape the passenger ride experience.</p>
             </div>
           </div>
         </div>
