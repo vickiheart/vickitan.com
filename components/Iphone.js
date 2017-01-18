@@ -74,6 +74,7 @@ class Iphone extends Component {
     this.props.portfolioItems.forEach((item) => {
       if (this.state.activeVideoId === item.id) {
         this[`video${item.id}`].classList.add('iphoneScreenVideoActive');
+        this[`video${item.id}`].currentTime = 0;
         if (this[`video${item.id}`].canplay) {
           this[`video${item.id}`].play()
         } else {
