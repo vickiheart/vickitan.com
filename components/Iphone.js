@@ -75,7 +75,12 @@ class Iphone extends Component {
       console.log(this[`video${item.id}`]);
       if (this.state.activeVideoId === item.id) {
         this[`video${item.id}`].classList.add('iphoneScreenVideoActive');
-        this[`video${item.id}`].play();
+        if (this[`video${item.id}`].canplay) {
+          this[`video${item.id}`].play()
+        } else {
+          console.log('cannot play');
+          setTimeout(() => this[`video${item.id}`].play(), 100);
+        }
       } else {
         this[`video${item.id}`].classList.remove('iphoneScreenVideoActive');
         this[`video${item.id}`].pause();
@@ -105,9 +110,10 @@ class Iphone extends Component {
                     key={item.id}
                     ref={(node) => this[`video${item.id}`] = node}
                     className={css(styles.iphoneScreenVideo)}
-                    src={item.videoSrcMov}
                     loop
                   >
+                    <source src={item.videoSrcMov} type='video/mp4'/>
+                    Your browser does not support the video tag.
                   </video>
                 )
               })
