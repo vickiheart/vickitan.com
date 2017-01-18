@@ -90,6 +90,8 @@ class PortfolioItem extends Component {
           <video
             className={css(styles.iphoneScreenVideo)}
             src={videoSrcMov}
+            ref={(node) => {this.videoNode = node}}
+            onClick={() => {this.videoNode.play()}}
             loop
           >
           </video>
