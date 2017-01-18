@@ -35,7 +35,8 @@ var portfolioItems = [
       'After the ride has ended, the map tilts to signal the state change, so you can be certain you’re no longer being charged. The pink pin indicates your drop-off location, serving as a subtle reminder and context for rating and giving feedback to your driver.',
     ],
     imgSrc: './media/rating_payments.png',
-    videoSrcMov: './media/videos/rating_payment.mov'
+    videoSrcWebm: './media/videos/rating_payment.webm',
+    videoSrcMov: './media/videos/rating_payment.mp4'
   },
   {
     id: 2,
@@ -45,7 +46,8 @@ var portfolioItems = [
       'The ride information panel is expandable, allowing for a closer look at your driver, their car, and your fellow line passengers without needing to blocking the map. The panel also expands contextually to let you know at a glance when your driver has arrived, and minimizes once your ride has begun, so you can adjust your drop-off address if needed.',
     ],
     imgSrc: './media/rideexperience.png',
-    videoSrcMov: './media/videos/ride_experience.mov'
+    videoSrcWebm: './media/videos/ride_experience.webm',
+    videoSrcMov: './media/videos/ride_experience.mp4'
   },
   {
     id: 3,
@@ -54,7 +56,8 @@ var portfolioItems = [
       'I created a subtle drop animation to display the most up-to-date car ETAs in the location pin. The goal was to effectively communicate the most accurate pickup times, with consideration to server constraints, without calling too much attention to changes in availability.',
     ],
     imgSrc: './media/dynamicpin.png',
-    videoSrcMov: './media/videos/dynamic_pin_drop.mov'
+    videoSrcWebm: './media/videos/dynamic_pin_drop.webm',
+    videoSrcMov: './media/videos/dynamic_pin_drop.mp4'
   },
   {
     id: 4,
@@ -63,6 +66,7 @@ var portfolioItems = [
       'I created a modular email for Lyft email receipts to help passengers quickly identify the ride, understand pricing, and take action (such as adding a tip or finding a lost item). Email components include: the ride summary, an itemized breakdown of price, and social and promotional cards.',
     ],
     imgSrc: './media/ride_receipts.png',
+    videoSrcWebm: './media/videos/ride_receipts.webm',
     videoSrcMov: './media/videos/ride_receipts.mov'
   },
 ]
@@ -152,6 +156,7 @@ class Portfolio extends Component {
                   title={item.title}
                   summary={item.summary}
                   imgSrc={item.imgSrc}
+                  videoSrcWebm={item.videoSrcWebm}
                   videoSrcMov={item.videoSrcMov}
                   parentElementId={'#section-' + (item.id)}
                 />

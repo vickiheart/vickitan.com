@@ -111,6 +111,7 @@ class Iphone extends Component {
                     className={css(styles.iphoneScreenVideo)}
                     loop
                   >
+                    <source src={item.videoSrcWebm} type='video/webm'/>
                     <source src={item.videoSrcMov} type='video/mp4'/>
                     Your browser does not support the video tag.
                   </video>
