@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
     marginRight: '48px',
     flex: '200px 0 0',
   },
+  aboutDetails: {
+
+  },
   aboutHeader: {
     marginBottom: '16px',
     fontSize: '20px',
