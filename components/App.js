@@ -31,8 +31,8 @@ var portfolioItems = [
     id: 1,
     title: 'Lyft: Rating and Payment',
     summary: [
-      'The end of your Lyft ride just got a smooth little update to help you complete payment and rate your driver with a few quick taps. I optimized this experience for the most common use case – you had a fine ride and you’re already calling the next one.',
-      'The 3D maps drop off view is a completely new one, and was used specifically to give context about the location of your last ride, and to signal that the ride has ended.',
+      'I redesigned Lyft’s rating and payment flow to help you finish your ride with just a few quick taps. I optimized this experience for the most common use case – you had a great Lyft ride and you’re already calling the next one.',
+      'After the ride has ended, the map tilts to signal the a state change, so you can be certain you’re no longer being charged. The pink pin indicates your drop-off location, serving as a subtle reminder and context for rating and giving feedback to your driver.',
     ],
     imgSrc: './media/rating_payments.png',
     videoSrcMov: './media/videos/rating_payment.mov'
@@ -41,8 +41,8 @@ var portfolioItems = [
     id: 2,
     title: 'Lyft: Ride Experience',
     summary: [
-      'We did a complete refresh of Lyft’s  ride experience.  Rooted in rigorous user testing, this update was targted to solve myriad discoverability, accessibility  and usability concerns. I owned the latter half of the experience, including everything after you hit “Request”.',
-      'Highlights:<br/>– Contextual ride panel that surfaces the information about your ride when you most need it.<br/>– Ride actions are ergonomically placed within thumbs reach for easy access.',
+      'I owned the design of Lyft’s in-ride panel, which displayed passenger and driver information for over 14 million rides in 2016. This design solved for a number of prior usability and discoverability issues, keeping in mind the small window of opportunity you have to find your driver in a busy intersection.',
+      'The ride information panel is expandable, allowing for a closer look at your driver, their car, and your fellow line passengers without needing to blocking the map. The panel also expands contextually to let you know at a glance when your driver has arrived, and minimizes once your ride has begun, so you can adjust your drop-off address if needed.',
     ],
     imgSrc: './media/rideexperience.png',
     videoSrcMov: './media/videos/ride_experience.mov'
@@ -51,7 +51,7 @@ var portfolioItems = [
     id: 3,
     title: 'Lyft: Dynamic Pin',
     summary: [
-      'Created a subtle, fine-tuned interaction for displaying updated ETAs in the location pin. At once, this animation must effectively communicate the most accurate information without calling too much attentiont to the changes in availability.',
+      'I created a subtle drop animation to display the most up-to-date car ETAs in the location pin. The goal was to effectively communicate the most accurate pickup times, with consideration to server constraints, without calling too much attention to changes in availability.',
     ],
     imgSrc: './media/dynamicpin.png',
     videoSrcMov: './media/videos/dynamic_pin_drop.mov'
@@ -60,7 +60,7 @@ var portfolioItems = [
     id: 4,
     title: 'Lyft: Ride Receipts',
     summary: [
-      'I created a modular email for Lyft email receipts, to help riders quickly identify the ride, understand pricing, and take action if needed. Components include: ride summary, itemized breakdown of price, and promotional cards. ',
+      'I created a modular email for Lyft email receipts to help passengers quickly identify the ride, understand pricing, and take action (such as adding a tip or finding a lost item). Email components include: the ride summary, an itemized breakdown of price, and social and promotional cards.',
     ],
     imgSrc: './media/ride_receipts.png',
     videoSrcMov: './media/videos/ride_receipts.mov'
