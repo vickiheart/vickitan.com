@@ -181,27 +181,7 @@ const OldPortfolio = () => (
 const App = () => (
   <div>
     <Portfolio/>
-
   </div>
 );
-
-// <Section id='section-0'>
-//   <About />
-// </Section>
-// {
-//   portfolioItems.map((item, idx) => {
-//     console.log(item);
-//     return (
-//       <Section id={'section-' + idx} key={idx}>
-//         <PortfolioItem
-//           key={idx}
-//           title={item.title}
-//           summary={item.summary}
-//           imgSrc={item.imgSrc}
-//         />
-//       </Section>
-//     )
-//   })
-// }
 
 export default App;
