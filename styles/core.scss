@@ -94,7 +94,6 @@ a {
   }
 }
 
-
 .va-center {
   display: flex;
   align-items: center;
@@ -102,15 +101,4 @@ a {
 
 .h100p {
   height: 100%;
-}
-
-.iphoneContainer {
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-}
-@media screen and (max-width: 600px) {
-  .iphoneContainer {
-    display: none;
-  }
 }

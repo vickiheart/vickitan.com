@@ -8,14 +8,17 @@ import ScrollMagic from 'scrollmagic';
 import iphoneSvg from '../media/iphoneSvg.svg';
 
 const styles = StyleSheet.create({
-  // iphoneContainer: {
-  //   display: 'flex',
-  //   justifyContent: 'center',
-  //   opacity: 0,
-  // },
+  iphoneContainer: {
+    opacity: 0,
+    '@media screen and (max-width: 600px)': {
+      display: 'none',
+    },
+  },
   iphoneFixed: {
     position: 'fixed',
     bottom: '-96px',
+    left: '50%',
+    transform: 'translateX(-50%)',
   },
   iphoneImage: {
     display: 'block',
@@ -46,7 +49,7 @@ const styles = StyleSheet.create({
 
 function initScrollEffects() {
   const offset = window.innerHeight * 2;
-  const tween = TweenMax.to('.iphoneContainer', 1, { css: { opacity: 1 } });
+  const tween = TweenMax.to('#iphoneContainer', 1, { css: { opacity: 1 } });
   const controller = new ScrollMagic.Controller();
   const scrollScene = new ScrollMagic.Scene({
     triggerElement: 'header',
@@ -89,7 +92,7 @@ class Iphone extends Component {
   render() {
     const { portfolioItems } = this.props;
     return (
-      <div className='iphoneContainer'>
+      <div id='iphoneContainer' className={css(styles.iphoneContainer)}>
         <div className={css(styles.iphoneFixed)}>
           <img className={css(styles.iphoneImage)} src={iphoneSvg} />
         </div>
