@@ -93,13 +93,10 @@ class PortfolioItem extends Component {
         <div className={css(styles.itemImage)}>
           <video
             className={css(styles.iphoneScreenVideo)}
-            ref={(node) => {this.videoNode = node}}
-            onClick={() => {this.videoNode.play()}}
-            loop
             controls
           >
-            <source src={videoSrcWebm} type='video/webm'/>
             <source src={videoSrcMp4} type='video/mp4'/>
+            <source src={videoSrcWebm} type='video/webm'/>
             Your browser does not support the video tag.
           </video>
         </div>
