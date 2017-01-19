@@ -82,6 +82,7 @@ class PortfolioItem extends Component {
 
   render() {
     var { title, summary, imgSrc, videoSrcWebm, videoSrcMp4 } = this.props;
+    console.log(videoSrcMp4);
     return (
       <div id='item' className={css(styles.item)}>
         <div id='details' className={css(styles.itemDetails)}>
@@ -92,13 +93,10 @@ class PortfolioItem extends Component {
         </div>
         <div className={css(styles.itemImage)}>
           <video
+            src={videoSrcMp4} type='video/mp4'
             className={css(styles.iphoneScreenVideo)}
             controls
-          >
-            <source src={videoSrcMp4} type='video/mp4'/>
-            <source src={videoSrcWebm} type='video/webm'/>
-            Your browser does not support the video tag.
-          </video>
+          />
         </div>
         <div className={css(styles.flexSeparator)}>
         </div>
