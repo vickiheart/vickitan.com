@@ -1,6 +1,6 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom';
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite/no-important';
 import THREE from 'three';
 import TweenMax from 'gsap';
 import ScrollMagic from 'scrollmagic';
@@ -9,7 +9,7 @@ import 'imports?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug
 
 const styles = StyleSheet.create({
   stage: {
-    position: 'fixed',
+    position: 'absolute',
     top: 0,
     left: 0,
     width: '100%',
@@ -97,14 +97,6 @@ function onWindowResize() {
 
 function onDocumentMouseMove(event) {
   mouseX = event.clientX - windowHalfX;
-}
-
-function onDocumentTouchMove(event) {
-  if (event.touches.length === 1) {
-    event.preventDefault();
-
-    mouseX = event.touches[0].pageX - windowHalfX;
-  }
 }
 
 function render() {
