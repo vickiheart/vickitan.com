@@ -82,7 +82,6 @@ class PortfolioItem extends Component {
 
   render() {
     var { title, summary, imgSrc, videoSrcWebm, videoSrcMp4 } = this.props;
-    console.log(videoSrcMp4);
     return (
       <div id='item' className={css(styles.item)}>
         <div id='details' className={css(styles.itemDetails)}>
