@@ -16,9 +16,15 @@ const styles = StyleSheet.create({
   },
   iphoneFixed: {
     position: 'fixed',
-    bottom: '-116px',
+    top: '50%',
     left: '60%',
-    transform: 'translateX(-50%)',
+    transform: 'translate(-50%, -50%)',
+  },
+  iphoneScreenFixed: {
+    position: 'fixed',
+    top: '60%',
+    left: '60%',
+    transform: 'translate(-50%, -50%)',
   },
   iphoneImage: {
     display: 'block',
@@ -110,7 +116,7 @@ class Iphone extends Component {
         <div className={css(styles.iphoneFixed)}>
           <img className={css(styles.iphoneImage)} src={iphoneSvg} />
         </div>
-        <div className={css(styles.iphoneFixed)}>
+        <div className={css(styles.iphoneScreenFixed)}>
           <div className={css(styles.videoContainerRelative)}>
             {
               portfolioItems.map((item) => {
