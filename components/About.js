@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
     fontFamily: '-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif',
     display: 'flex',
     alignItems: 'center',
+    '@media screen and (max-width: 600px)': {
+      flexWrap: 'wrap',
+    },
   },
   aboutAvatar: {
     backgroundImage: 'url("./media/vickitan.png")',
@@ -27,9 +30,18 @@ const styles = StyleSheet.create({
     height: '200px',
     marginRight: '48px',
     flex: '200px 0 0',
+    '@media screen and (max-width: 600px)': {
+      order: 2,
+      width: '160px',
+      height: '160px',
+      flex: '160px 0 0',
+    },
   },
   aboutDetails: {
-
+    '@media screen and (max-width: 600px)': {
+      order: 1,
+      marginBottom: '24px',
+    },
   },
   aboutHeader: {
     marginBottom: '16px',
@@ -64,7 +76,7 @@ class About extends Component {
         <div className={css(styles.aboutContainer)}>
           <div className={css(styles.aboutAvatar)}>
           </div>
-          <div>
+          <div className={css(styles.aboutDetails)}>
             <div className={css(styles.aboutHeader)}>Hi friends!</div>
             <div className={css(styles.aboutContent)}>
               <p>I’m Vicki, a product designer living in San Francisco. I love reading sci-fi, practicing yoga, and going on motorcycle adventures.</p>

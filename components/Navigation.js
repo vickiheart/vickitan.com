@@ -37,27 +37,11 @@ const styles = StyleSheet.create({
     },
   },
   navigationItem: {
-    height: '36px',
+    height: '32px',
     '@media screen and (max-width: 600px)': {
       marginRight: '12px',
       marginLeft: '12px',
     },
-  },
-  navigationItemLink: {
-    display: 'block',
-    marginTop: '12px',
-    marginBottom: '12px',
-    cursor: 'pointer',
-    background: '#333',
-    width: '6px',
-    height: '6px',
-    borderRadius: '50%',
-    transition: 'all ease-in 0.14s',
-
-  },
-  navigationItemLinkActive: {
-    width: '12px',
-    height: '12px',
   },
 });
 

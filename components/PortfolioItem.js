@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     marginRight: '32px',
     flex: '1 auto',
     lineHeight: '1.4',
-    width: '5%',
+    width: '13%',
     '@media screen and (max-width: 600px)': {
       width: '100%',
     },

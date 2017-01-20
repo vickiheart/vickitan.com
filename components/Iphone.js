@@ -5,7 +5,7 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import TweenMax from 'gsap';
 import ScrollMagic from 'scrollmagic';
 
-import iphoneSvg from './media/iphoneSvg.svg';
+import iphoneSvg from './media/iphone.svg';
 
 const styles = StyleSheet.create({
   iphoneContainer: {
@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
   },
   iphoneFixed: {
     position: 'fixed',
-    bottom: '-96px',
-    left: '50%',
+    bottom: '-116px',
+    left: '60%',
     transform: 'translateX(-50%)',
   },
   iphoneImage: {
     display: 'block',
-    maxWidth: '420px',
+    maxWidth: '520px',
     width: 'auto',
     height: 'auto',
     // boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)',
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '0',
     left: '0',
-    maxWidth: '300px',
+    maxWidth: '380px',
     width: 'auto',
     height: 'auto',
     border: '2px solid #000',
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
   },
   videoContainerRelative: {
     position: 'relative',
-    width: '300px',
-    height: '652px',
+    width: '380px',
+    height: '812px',
   }
 });
 

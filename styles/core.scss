@@ -42,18 +42,17 @@ a {
 }
 @media screen and (max-width: 600px) {
   .Navigation {
-    height: 72px;
+    height: 60px;
     width: 100%;
     margin: 0;
+    background: #fff;
   }
 }
 
-
-
 .NavigationItem {
   display: block;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   cursor: pointer;
   background: #333;
   width: 6px;
