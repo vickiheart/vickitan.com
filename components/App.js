@@ -6,6 +6,7 @@ import Logo from './Logo';
 import Wave from './Wave';
 import SocialLinks from './SocialLinks';
 import About from './About';
+import Social from './Social';
 import Navigation from './Navigation';
 import PortfolioItem from './PortfolioItem';
 import Iphone from './Iphone';
@@ -160,7 +161,11 @@ class Portfolio extends Component {
               </Element>
             )
           })
+
         }
+        <Element id='section-n' name='section-n' className="element pd-left-120px va-center">
+          <Social />
+        </Element>
         <Iphone
           portfolioItems={portfolioItems}
           ref={(node) => this.iphoneNode = node}

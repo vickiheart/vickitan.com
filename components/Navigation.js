@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
 
 function initScrollEffects() {
   const offset = window.innerHeight;
+
   const tween = TweenMax.to('.Navigation', 1, { css: { opacity: 1 } });
   const controller = new ScrollMagic.Controller();
   const scrollScene = new ScrollMagic.Scene({
@@ -54,6 +55,14 @@ function initScrollEffects() {
     offset: offset + 100,
   }).setTween(tween)
     .addTo(controller);
+
+  const tween2 = TweenMax.to('.Navigation', 1, { css: { opacity: 0 } });
+  const controller2 = new ScrollMagic.Controller();
+  const scrollScene2 = new ScrollMagic.Scene({
+    triggerElement: '#section-n',
+    offset: offset / 4,
+  }).setTween(tween2)
+    .addTo(controller2);
 }
 
 class Navigation extends Component {

@@ -49,13 +49,23 @@ const styles = StyleSheet.create({
 
 function initScrollEffects() {
   const offset = window.innerHeight * 2;
-  const tween = TweenMax.to('#iphoneContainer', 1, { css: { opacity: 1 } });
+
+  const tweenIn = TweenMax.to('#iphoneContainer', 1, { css: { opacity: 1 } });
+  const tweenOut = TweenMax.to('#iphoneContainer', 1, { css: { opacity: 0 } });
+
   const controller = new ScrollMagic.Controller();
   const scrollScene = new ScrollMagic.Scene({
     triggerElement: 'header',
     offset: offset + 300,
-  }).setTween(tween)
+  }).setTween(tweenIn)
     .addTo(controller);
+
+  const controller2 = new ScrollMagic.Controller();
+  const scrollScene2 = new ScrollMagic.Scene({
+    triggerElement: '#section-n',
+    offset: offset / 8,
+  }).setTween(tweenOut)
+    .addTo(controller2);
 }
 
 class Iphone extends Component {

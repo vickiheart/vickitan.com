@@ -56,6 +56,15 @@ const SocialLinks = () => (
     }}>
       <FontAwesome name="play" />
     </SocialLink>
+    <SocialLink handleClick={() => {
+      scroller.scrollTo('section-n', {
+          duration: 500,
+          delay: 0,
+          smooth: true,
+      })
+    }}>
+      <FontAwesome name="mouse-pointer" />
+    </SocialLink>
   </nav>
 );
 
