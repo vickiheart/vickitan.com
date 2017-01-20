@@ -7,12 +7,15 @@ const { Link, DirectLink, Element, Events, scroll, scrollSpy, scroller } = Scrol
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 10,
+    paddingTop: '10px',
     display: 'flex',
-    fontSize: 24,
-    width: 175,
+    fontSize: '24px',
+    width: '175px',
     alignItems: 'center',
     justifyContent: 'space-around',
+    '@media screen and (max-width: 600px)': {
+      paddingTop: '32px',
+    },
   },
   link: {
     display: 'flex',
@@ -63,7 +66,7 @@ const SocialLinks = () => (
           smooth: true,
       })
     }}>
-      <FontAwesome name="mouse-pointer" />
+      <FontAwesome name="square" />
     </SocialLink>
   </nav>
 );

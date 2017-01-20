@@ -45,7 +45,7 @@ const Social = () => (
       <FontAwesome name="instagram" />
     </SocialLink>
     <SocialLink href="mailto:vickiching@gmail.com ">
-      <FontAwesome name="paper-plane" />
+      <FontAwesome name="comment" />
     </SocialLink>
   </nav>
 );
