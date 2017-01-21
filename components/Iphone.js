@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
   },
   iphoneScreenFixed: {
     position: 'fixed',
-    top: '60%',
-    left: '60%',
+    top: '550px',
+    left: '50%',
     transform: 'translate(-50%, -50%)',
   },
   iphoneImage: {
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     height: 'auto',
     border: '2px solid #000',
     marginBottom: '120px',
-    transition: 'all 0.36s ease-in',
+    transition: 'all 0.2s ease-in',
     transform: 'translateY(24px)',
     opacity: 0,
   },
@@ -53,16 +53,18 @@ const styles = StyleSheet.create({
   }
 });
 
-function initScrollEffects() {
-  const offset = window.innerHeight * 2;
 
-  const tweenIn = TweenMax.to('#iphoneContainer', 1, { css: { opacity: 1 } });
-  const tweenOut = TweenMax.to('#iphoneContainer', 1, { css: { opacity: 0 } });
+
+function initScrollEffects() {
+  const offset = window.innerHeight * 2.25;
+
+  const tweenIn = TweenMax.to('#iphoneContainer', 0.24, { css: { opacity: 1 } });
+  const tweenOut = TweenMax.to('#iphoneContainer', 0.24, { css: { opacity: 0 } });
 
   const controller = new ScrollMagic.Controller();
   const scrollScene = new ScrollMagic.Scene({
     triggerElement: 'header',
-    offset: offset + 300,
+    offset: offset,
   }).setTween(tweenIn)
     .addTo(controller);
 
@@ -115,25 +117,25 @@ class Iphone extends Component {
       <div id='iphoneContainer' className={css(styles.iphoneContainer)}>
         <div className={css(styles.iphoneFixed)}>
           <img className={css(styles.iphoneImage)} src={iphoneSvg} />
-        </div>
-        <div className={css(styles.iphoneScreenFixed)}>
-          <div className={css(styles.videoContainerRelative)}>
-            {
-              portfolioItems.map((item) => {
-                return (
-                  <video
-                    key={item.id}
-                    ref={(node) => this[`video${item.id}`] = node}
-                    className={css(styles.iphoneScreenVideo)}
-                    loop
-                  >
-                    <source src={item.videoSrcWebm} type='video/webm'/>
-                    <source src={item.videoSrcMp4} type='video/mp4'/>
-                    Your browser does not support the video tag.
-                  </video>
-                )
-              })
-            }
+          <div className={css(styles.iphoneScreenFixed)}>
+            <div className={css(styles.videoContainerRelative)}>
+              {
+                portfolioItems.map((item) => {
+                  return (
+                    <video
+                      key={item.id}
+                      ref={(node) => this[`video${item.id}`] = node}
+                      className={css(styles.iphoneScreenVideo)}
+                      loop
+                    >
+                      <source src={item.videoSrcWebm} type='video/webm'/>
+                      <source src={item.videoSrcMp4} type='video/mp4'/>
+                      Your browser does not support the video tag.
+                    </video>
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
       </div>

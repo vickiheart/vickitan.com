@@ -61,14 +61,22 @@ const styles = StyleSheet.create({
 });
 
 function initScrollEffects(parentElementId) {
-  const offset = window.innerHeight/4;
-  const tween = TweenMax.to(parentElementId + ' #item', 1, { css: { opacity: 1 } });
+  const offset = window.innerHeight;
+  const tween = TweenMax.to(parentElementId + ' #item', 0.4, { css: { opacity: 1 } });
   const controller = new ScrollMagic.Controller();
   const scrollScene = new ScrollMagic.Scene({
     triggerElement: parentElementId,
-    offset: offset,
+    offset: offset / 4,
   }).setTween(tween)
     .addTo(controller);
+
+  const tween2 = TweenMax.to(parentElementId + ' #item', 0.4, { css: { opacity: 0 } });
+  const controller2 = new ScrollMagic.Controller();
+  const scrollScene2 = new ScrollMagic.Scene({
+    triggerElement: parentElementId,
+    offset: offset,
+  }).setTween(tween2)
+    .addTo(controller2);
 }
 
 function createMarkup(html) {
