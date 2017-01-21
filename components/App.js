@@ -163,7 +163,7 @@ class Portfolio extends Component {
           })
 
         }
-        <Element id='section-n' name='section-n' className="element pd-left-120px va-center">
+        <Element id='section-n' name='section-n' className="element va-center ha-center">
           <Social />
         </Element>
         <Iphone
