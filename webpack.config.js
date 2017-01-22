@@ -46,7 +46,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Vicki Tan',
       template: 'index.ejs',
-      favicon: './favicon.svg',
+      favicon: './favicon.png',
     }),
   ],
 };
