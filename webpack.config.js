@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   module: {
@@ -39,7 +40,6 @@ module.exports = {
     './index.js',
   ],
   output: {
-    publicPath: '/',
     path: 'build',
     filename: '[hash].bundle.js',
   },
