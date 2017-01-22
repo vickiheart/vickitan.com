@@ -137,7 +137,7 @@ class Portfolio extends Component {
         </Element>
 
 
-        <Element id='section-0' name='section-0' className="element pd-left-120px va-center">
+        <Element id='section-0' name='section-0' className="element pd-left-120px pd-right-120px va-center">
           <About />
         </Element>
         {

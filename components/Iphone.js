@@ -19,19 +19,28 @@ const styles = StyleSheet.create({
     top: '50%',
     left: '60%',
     transform: 'translate(-50%, -50%)',
+    '@media screen and (max-width: 1200px)': {
+      left: '70%',
+      transform: 'translate(-50%, -50%)',
+    },
   },
   iphoneScreenFixed: {
     position: 'fixed',
     top: '550px',
     left: '50%',
     transform: 'translate(-50%, -50%)',
+    '@media screen and (max-width: 960px)': {
+      top: '512px',
+    },
   },
   iphoneImage: {
     display: 'block',
     maxWidth: '520px',
     width: 'auto',
     height: 'auto',
-    // boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)',
+    '@media screen and (max-width: 960px)': {
+      maxWidth: '400px',
+    },
   },
   iphoneScreenVideo: {
     position: 'absolute',
@@ -45,11 +54,17 @@ const styles = StyleSheet.create({
     transition: 'all 0.2s ease-in',
     transform: 'translateY(24px)',
     opacity: 0,
+    '@media screen and (max-width: 960px)': {
+      maxWidth: '288px',
+    },
   },
   videoContainerRelative: {
     position: 'relative',
     width: '380px',
     height: '812px',
+    '@media screen and (max-width: 960px)': {
+      width: '288px',
+    },
   }
 });
 
