@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     position: 'relative',
     alignItems: 'center',
+    padding: '48px',
     zIndex: 1,
     '@media (max-width: 600px)': {
       flexDirection: 'column',

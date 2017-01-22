@@ -1,7 +1,5 @@
 import React from 'react';
-import logoSvg from '../media/logo.svg';
-
-console.log(logoSvg);
+import logoSvg from './media/logo.svg';
 
 const Logo = () => (
   <img src={logoSvg} />

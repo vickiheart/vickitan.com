@@ -20,12 +20,18 @@ module.exports = {
         ],
       },
       {
+        test: /\.(mov|mp4)(\?\S*)?$/i,
+        loaders: [
+          'file?hash=sha512&digest=hex&name=[hash].[ext]',
+        ],
+      },
+      {
         test: /\.(woff|woff2|eot|ttf)(\?\S*)?$/,
         loader: 'url-loader?limit=100000',
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
+        loaders: ['style', 'css', 'postcss-loader', 'sass'],
       },
     ],
   },
@@ -33,14 +39,15 @@ module.exports = {
     './index.js',
   ],
   output: {
-    path: 'public',
+    publicPath: '/',
+    path: 'build',
     filename: '[hash].bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Vicki Tan',
       template: 'index.ejs',
-      favicon: './favicon.svg',
+      favicon: './favicon.png',
     }),
   ],
 };
