@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress --inline --hot",
+    "build": "webpack",
     "validate-webpack": "webpack-validator webpack.config.js"
   },
   "author": "Benjamin Wilkins (becowilk@gmail.com)",
@@ -25,7 +26,7 @@
     "html-webpack-plugin": "^2.21.0",
     "image-webpack-loader": "^1.8.0",
     "imports-loader": "^0.6.5",
-    "node-sass": "^3.8.0",
+    "node-sass": "^4.5.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
