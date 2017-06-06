@@ -47,7 +47,7 @@ In your terminal, while you're in the same directory as your website code, run t
 npm run build
 ```
 
-This will generate a folder called 'public' in the folder that your website code lives.
+This will generate a folder called 'public' in the folder that your website code lives. 
 
 #### Copying over contents of build to AWS
 This is a static site with resources living in an Amazon S3 bucket.
@@ -58,7 +58,7 @@ Head over to AWS to your S3 bucket, remove the old files, and add the new ones f
 
 Once you've updated the S3 bucket, you should see your changes live on `http://vickitan.com`.
 
-Congrats, your changes are now live 😁 🙌
+Congrats, your changes are now live 😁 🙌 
 
 ### Saving changes back to Github
 This is to ensure that the github repo stays up to date with the latest copy of your code.
