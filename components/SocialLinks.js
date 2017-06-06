@@ -2,24 +2,34 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import { StyleSheet, css } from 'aphrodite';
 
+import Scroll from 'react-scroll';
+const { Link, DirectLink, Element, Events, scroll, scrollSpy, scroller } = Scroll;
+
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 10,
+    paddingTop: '10px',
     display: 'flex',
-    fontSize: 24,
-    width: 175,
+    fontSize: '24px',
+    width: '175px',
     alignItems: 'center',
     justifyContent: 'space-around',
+    '@media screen and (max-width: 600px)': {
+      paddingTop: '32px',
+    },
   },
   link: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
+    cursor: 'pointer',
   },
 });
 
-const SocialLink = ({ href, children }) => (
-  <a className={css(styles.link)} href={href}>
+const SocialLink = ({ href, children, handleClick }) => (
+  <a
+    className={css(styles.link)}
+    href={href}
+    onClick={handleClick}>
     {children}
   </a>
 );
@@ -31,17 +41,32 @@ SocialLink.propTypes = {
 
 const SocialLinks = () => (
   <nav className={css(styles.container)}>
-    <SocialLink href="//twitter.com/vickiheart" >
-      <FontAwesome name="twitter" />
+    <SocialLink handleClick={() => {
+      scroller.scrollTo('section-0', {
+          duration: 500,
+          delay: 0,
+          smooth: true,
+      })
+    }}>
+      <FontAwesome name="heart" />
     </SocialLink>
-    <SocialLink href="//dribbble.com/vickiheart">
-      <FontAwesome name="dribbble" />
+    <SocialLink handleClick={() => {
+      scroller.scrollTo('section-1', {
+          duration: 500,
+          delay: 0,
+          smooth: true,
+      })
+    }}>
+      <FontAwesome name="play" />
     </SocialLink>
-    <SocialLink href="//linkedin.com/in/vickitan">
-      <FontAwesome name="linkedin" />
-    </SocialLink>
-    <SocialLink href="//instagram.com/vickiheart">
-      <FontAwesome name="instagram" />
+    <SocialLink handleClick={() => {
+      scroller.scrollTo('section-n', {
+          duration: 500,
+          delay: 0,
+          smooth: true,
+      })
+    }}>
+      <FontAwesome name="square" />
     </SocialLink>
   </nav>
 );
