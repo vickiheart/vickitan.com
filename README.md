@@ -47,7 +47,7 @@ In your terminal, while you're in the same directory as your website code, run t
 npm run build
 ```
 
-This will generate a folder called 'build' in the folder that your website code lives.
+This will generate a folder called 'public' in the folder that your website code lives.
 
 #### Copying over contents of build to AWS
 This is a static site with resources living in an Amazon S3 bucket.
